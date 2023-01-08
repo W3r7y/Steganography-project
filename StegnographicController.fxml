@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StegnographicController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label fx:id="fileNameLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="905.0" text="File name">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgView1" fitHeight="314.0" fitWidth="441.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <Label text=" Your text" textOverrun="CLIP">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtArea" prefHeight="132.0" prefWidth="899.0" />
+      <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="155.0" prefWidth="899.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startPressed" prefHeight="39.0" prefWidth="301.0" text="Start" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseFilePressed" prefHeight="39.0" prefWidth="303.0" text="Choose file" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cleanPressed" prefHeight="39.0" prefWidth="311.0" text="Clean" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Button>
+            <RadioButton fx:id="readBtn" mnemonicParsing="false" text="Read data" GridPane.columnIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="g1" />
+               </toggleGroup>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="hideBtn" contentDisplay="CENTER" mnemonicParsing="false" text="Hide data" toggleGroup="$g1" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></RadioButton>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#decryptPressed" prefHeight="39.0" prefWidth="335.0" text="Decrypt message" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></Button>
+            <RadioButton fx:id="withEnc" mnemonicParsing="false" text="With encryption">
+               <toggleGroup>
+                  <ToggleGroup fx:id="g2" />
+               </toggleGroup>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="withoutCrt" mnemonicParsing="false" text="Without encryption" toggleGroup="$g2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font></RadioButton>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
